@@ -1,0 +1,28 @@
+STRATEGY VERIFICATION — 2026-10-24
+
+Re-ran original streaming replay on seasons 451–600, delay 4 seconds, cost $0.10 per share each way. Optional sleeves disabled.
+{
+  "seasons": "451-600",
+  "delay": 4,
+  "cost": 0.1,
+  "snap": false,
+  "etf": false,
+  "mean": 4777.5376,
+  "median": 4344.3550000000005,
+  "worst": -2719.3199999999997,
+  "win_rate": 0.96
+}
+Maximum absolute per-season difference from supplied results: 2.1827872842550278e-11.
+All five supplied engine tests passed. Future-mutation test checks earlier fair values; it does not establish a completely untouched research holdout or live-order correctness.
+
+Material findings:
+1. Live adapter only advances its clock on news messages (bot_adapter.py:97–106), while Engine requires exactly T=550 to exit (engine.py:345). None of the 450 archived test rounds contains a news event that rounds down to 550. Thus the adapter driven by these news timings misses the planned exit, although replay generates this clock tick independently. See news_clock_audit.json.
+2. Engine returns a flatten target on announcements (engine.py:318–321). Live adapter discards that return (bot_adapter.py:101); immediate flattening is not implemented. Replay handles this return. The supplied announcement test only checks disable flags.
+3. Replay fills Strategy A targets completely at delayed house marks plus cost (replay.py:53–55). It does not simulate the live limit orders, depth, partial fills, outstanding orders, or cancellations. Historical P&L reproduction is not live execution validation.
+4. Risk budget is a covariance-based estimated one-standard-deviation exposure budget, not a maximum loss guarantee. When already over budget, the interpolation from current to proposed position cannot necessarily reduce risk (engine.py:270–275). Widening-gap rules stop additions rather than automatically liquidating existing exposure.
+5. README explicitly states seasons 451–600 had been inspected in earlier studies and exit timing changed after evaluation (README.md:179–182). These results are not a pristine prospective holdout.
+6. Runtime issued sklearn version mismatch warnings (saved 1.9.1, installed 1.6.1), plus numerical warnings at engine.py:223. Final per-season P&Ls nevertheless matched the supplied results to floating-point precision. The source of numerical warnings remains unresolved; align the runtime and check finite model outputs before live deployment.
+
+Assessment (subjective): trading idea 8/10; current live implementation 3/10; overall 6/10. Promising case-specific settlement-value strategy with reproducible paper results. Fix live exits, announcement handling, and fill reconciliation, then test realistic execution and genuinely new seasons before trusting its profit forecast.
+
+No strategy files modified and no exchange orders submitted.

@@ -1,0 +1,156 @@
+{
+ "none [plain]": {
+  "mean": 4812.365466666666,
+  "median": 4344.354999999996,
+  "worst": -2719.320000000005,
+  "win": 0.96,
+  "breaches": 0
+ },
+ "none [safety]": {
+  "mean": 4777.5376,
+  "median": 4344.354999999996,
+  "worst": -2719.320000000005,
+  "win": 0.96,
+  "breaches": 3
+ },
+ "up drift +$0.02/s after 400s [plain]": {
+  "mean": 1707.1299999999994,
+  "median": 1222.8050000000012,
+  "worst": -7212.209999999992,
+  "win": 0.58,
+  "breaches": 0
+ },
+ "up drift +$0.02/s after 400s [safety]": {
+  "mean": 876.1379333333338,
+  "median": 409.63499999999635,
+  "worst": -5959.990000000005,
+  "win": 0.6,
+  "breaches": 915
+ },
+ "down drift -$0.02/s after 400s [plain]": {
+  "mean": 7917.600933333334,
+  "median": 7621.7199999999975,
+  "worst": -2811.9800000000005,
+  "win": 0.9733333333333334,
+  "breaches": 0
+ },
+ "down drift -$0.02/s after 400s [safety]": {
+  "mean": 6944.969533333333,
+  "median": 6257.665000000003,
+  "worst": -2211.0000000000014,
+  "win": 0.98,
+  "breaches": 784
+ },
+ "all stocks +3% jump at 300s [plain]": {
+  "mean": 3466.5778573333328,
+  "median": 2934.3531500000063,
+  "worst": -3154.825400000016,
+  "win": 0.8733333333333333,
+  "breaches": 0
+ },
+ "all stocks +3% jump at 300s [safety]": {
+  "mean": 3300.7323659999993,
+  "median": 2780.0763500000066,
+  "worst": -3160.949600000007,
+  "win": 0.8733333333333333,
+  "breaches": 231
+ },
+ "all stocks -3% jump at 300s [plain]": {
+  "mean": 4326.992708666666,
+  "median": 3790.9344999999994,
+  "worst": -3269.2099000000017,
+  "win": 0.9466666666666667,
+  "breaches": 0
+ },
+ "all stocks -3% jump at 300s [safety]": {
+  "mean": 4282.060222666667,
+  "median": 3791.4338999999973,
+  "worst": -3119.989499999996,
+  "win": 0.9466666666666667,
+  "breaches": 57
+ },
+ "insurers drift -$0.03/s after 300s [plain]": {
+  "mean": 5718.157133333332,
+  "median": 5085.975000000005,
+  "worst": -3653.1600000000053,
+  "win": 0.9466666666666667,
+  "breaches": 0
+ },
+ "insurers drift -$0.03/s after 300s [safety]": {
+  "mean": 6055.2662666666665,
+  "median": 5582.940000000005,
+  "worst": -3139.280000000006,
+  "win": 0.9733333333333334,
+  "breaches": 154
+ },
+ "PORT economics change from round 2 (unmodelled) [plain]": {
+  "mean": 4717.428233333332,
+  "median": 4211.927499999996,
+  "worst": -2609.800000000003,
+  "win": 0.94,
+  "breaches": 0
+ },
+ "PORT economics change from round 2 (unmodelled) [safety]": {
+  "mean": 4710.663166666665,
+  "median": 4223.1424999999945,
+  "worst": -2609.800000000003,
+  "win": 0.9466666666666667,
+  "breaches": 17
+ },
+ "quote noise 0.3% [plain]": {
+  "mean": 4795.821297138723,
+  "median": 4393.981937675702,
+  "worst": -2118.5343999130873,
+  "win": 0.9466666666666667,
+  "breaches": 0
+ },
+ "quote noise 0.3% [safety]": {
+  "mean": 4769.011260368573,
+  "median": 4393.981937675702,
+  "worst": -2180.5923810081495,
+  "win": 0.9533333333333334,
+  "breaches": 3
+ },
+ "30% checkpoints stale/rejected [plain]": {
+  "mean": 3421.654466666666,
+  "median": 3004.3199999999943,
+  "worst": -2754.7800000000007,
+  "win": 0.9466666666666667,
+  "breaches": 0
+ },
+ "30% checkpoints stale/rejected [safety]": {
+  "mean": 3396.1123999999995,
+  "median": 2954.7349999999938,
+  "worst": -2754.7800000000007,
+  "win": 0.9466666666666667,
+  "breaches": 3
+ },
+ "adverse fills (20% of gap) [plain]": {
+  "mean": 3297.2638408189564,
+  "median": 2987.480308154636,
+  "worst": -3698.5446043906195,
+  "win": 0.8733333333333333,
+  "breaches": 0
+ },
+ "adverse fills (20% of gap) [safety]": {
+  "mean": 3278.642586229334,
+  "median": 2987.480308154636,
+  "worst": -3698.5446043906195,
+  "win": 0.8666666666666667,
+  "breaches": 3
+ },
+ "cost $0.25 + delay 10s [plain]": {
+  "mean": 3203.1984,
+  "median": 2767.390000000002,
+  "worst": -2523.3700000000026,
+  "win": 0.9,
+  "breaches": 0
+ },
+ "cost $0.25 + delay 10s [safety]": {
+  "mean": 3181.5507999999995,
+  "median": 2767.390000000002,
+  "worst": -2523.3700000000026,
+  "win": 0.9,
+  "breaches": 3
+ }
+}
